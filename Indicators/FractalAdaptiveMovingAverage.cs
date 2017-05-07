@@ -91,7 +91,7 @@ namespace QuantConnect.Indicators
             hh = _high.Take(_n / 2).Max();
             ll = _low.Take(_n / 2).Min();
 
-            n1 = (hh - ll) / (_n / 2);
+            n1 = (hh - ll) / (_n / 2D);
 
             if (_high.IsReady)
             {
@@ -99,7 +99,7 @@ namespace QuantConnect.Indicators
                 ll = _low.Skip(_n / 2).Take(_n / 2).Min();
             }
 
-            n2 = (hh - ll) / (_n / 2);
+            n2 = (hh - ll) / (_n / 2D);
 
             if (n1 > 0 && n2 > 0 && n3 > 0)
             {
